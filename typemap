@@ -1,0 +1,21 @@
+Angle			T_SHORT
+Boolean			T_LONG
+Colorindex		T_U_SHORT
+Coord			T_FLOAT
+Device			T_U_SHORT
+Icoord			T_LONG
+Scoord			T_SHORT
+Screencoord		T_SHORT
+float			T_FLOAT
+unsigned		T_UIV
+unsigned int		T_UIV
+unsigned long		T_UIV
+######################################################################
+INPUT
+T_UIV
+	$var = ($type)SvNV($arg)
+
+######################################################################
+OUTPUT
+T_UIV
+	sv_setnv($arg, (double)$var)

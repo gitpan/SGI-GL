@@ -1,0 +1,51 @@
+This directory contains an extension module to allow Perl5 programs
+access the Iris GL library supplied by SGI with the IRIX system.
+
+This module requires the GL library to be installed (e.g. the file
+/usr/lib/libgl.so, which is part of the eoe1.sw.gfx_lib package in
+IRIX 5.2, it may very well be under another name in other versions of
+IRIX)
+
+This package uses MakeMaker in a standard way to build its Makefile.
+In order to build it do the following:
+
+1. Unpack the source into a directory
+
+2. change the current directory to the source directory
+
+3. run "perl Makefile.PL"
+
+4. run "make"
+
+5. run "make install" as someone who can write to your Perl library
+   directory.
+
+The current implementation is NOT complete - functions and constants
+are being added to it as I need them.  If you want me to add a
+particular function from the Iris GL library then please drop me a
+note and I'll try to do what you want.
+
+Most of the functions are extremly trivial to support so you shouldn't
+be too scared to try to add what you need yourself, but please let me
+know about what you do so I can maintain a single version for the
+benefit of all users (all two of them :-).
+
+Notice that the Font Manager routines are not included in this module,
+a separate module exists for them (call 'SGI::FM').
+
+Usage is stright-forward - just add a 'use SGI::GL' command before using
+any of the functions then call them as you would call GL functions
+from C, prefixing the function names with 'SGI::GL::'.
+
+A tiny examples sub-directory is supplied, try it.  The "zdraw.pl"
+exmaple will show how to use the "rectf" function through this module.
+It also shows you how to avoid typing the SGI::GL:: extensions.
+
+Copyright policy:
+
+     Copyright (c) 1995 Amos Shapira. All rights reserved.
+     This program is free software; you can redistribute it and/or
+     modify it under the same terms as Perl itself.
+
+--Amos Shapira
+amoss@cs.huji.ac.il
